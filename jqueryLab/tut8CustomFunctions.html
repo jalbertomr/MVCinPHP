@@ -1,0 +1,93 @@
+<!-- jquery tutorial 8 Custom functions
+--!>
+<html>
+<head>
+  <title>Test</title>
+  <script type="text/javascript" src="../public/js/jquery-1.12.0.js"></script>
+  
+  <script type="text/javascript">
+  
+  //to declare a function in jquery
+
+  //funcion customizada
+  $.fn.MiFuncion = function() {
+    alert(1);
+  };
+
+  //funcion con parametro
+  $.fn.MiOtraFuncion = function(str){
+    alert(str);
+  };
+  
+  //funcion con mas parametros
+  $.fn.ConMasParametros = function( str, num) {
+    alert( str + " " + num);
+  };
+    
+  //funcion con css
+  $.fn.customFunction = function() {
+    return $(this).css('background', 'blue');
+  };
+    
+  //function con parametro
+  $.fn.customFunctionColor = function( color) {
+    return $(this).css('background', color);
+  };    
+    
+  //funcion con 2 returns
+  $.fn.customFunction2ret = function() {
+    return $(this).css('background', 'cyan').fadeOut(2000);
+  };  
+
+  $.fn.cf2ret = function() {
+    return $(this).css('background', 'white').fadeIn(2000);
+  };  
+
+  $.fn.effectInOut = function( effectIn) {
+    if ( effectIn === true ) {
+      return $(this).css('background', 'white').fadeIn(2000);
+    } else {
+      return $(this).css('background', 'cyan').fadeOut(2000);
+    }    
+  };
+
+  $(document).ready( function(){
+ 
+    $('#buttonIn').click( function() {
+      //$(this).MiFuncion();
+      //$(this).MiOtraFuncion('valor parametro pasado ok');
+      //$(this).ConMasParametros('parametro str', 1234);
+      //  $(this).customFunction();
+      //$('h1').customFunction();
+      //$(this).customFunctionColor('red');  //se colorea el botton
+      //$('h1').customFunction2ret();
+      //$('h1').customInOut(true);
+      $('h1').effectInOut( true );
+    });
+
+    $('#buttonOut').click( function() {
+      //$('h1').cf2ret();
+      $('h1').effectInOut( false );   
+    });
+  });
+  
+  </script>
+
+
+</head>
+<body>
+
+<h1>Custom Functions</h1>
+<ul>
+  <li>This <b>is an</b> item</li>
+  <li>This is an item</li>
+  <li>This is an item 3</li>
+  <li>This is an item</li>
+  <li>This is an item</li>  
+</ul>  
+
+<input type="submit" id="buttonIn" value="efecto In"/>
+<input type="submit" id="buttonOut" value="efecto Out"/>
+  
+</body>
+</html>

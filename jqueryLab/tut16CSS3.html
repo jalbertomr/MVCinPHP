@@ -1,0 +1,63 @@
+<!-- jquery tutorial 16 CSS3
+--!>
+<html>
+<head>
+  <title>Test</title>
+  <script type="text/javascript" src="../public/js/jquery-1.12.0.js"></script>
+  
+  <script type="text/javascript">
+  
+  
+  </script>
+  <style>
+    .red {color : red;}
+  </style>
+
+</head>
+<body>
+
+<h1>Testing</h1>
+
+<ul>
+<li>item 1</li>
+<li>item 2</li>
+<li>item 3</li>
+<li>
+  <ul>
+     <li>Test</li>
+     <li>Test</li>
+     <li>Test</li>
+  </ul>
+</li>
+<li>item 4</li>
+<li>item 5</li>
+<li>item 6</li>
+<li>item 7</li>
+</ul>
+
+<ul>
+<li class="item 1">item 1</li>
+<li class="item 2">item 2</li>
+<li class="item 3">item 3</li>
+<li class="item 4">item 4</li>
+<li class="item 5">item 5</li>
+<li class="item 6">item 6</li>
+<li class="item 7">item 7</li>
+</ul>
+
+<h3>Comandos a ejecutar desde consola</h3>
+$( 'li' ).addClass('red');<br />
+$('li').each( function(){<br />
+  $(this).append(" esto se agrego");<br />
+});<br />
+$('li[class^=ite]').append("que empieze con ite, CSS3");<br />
+$('li[class$=3]').append("que termine en 3, CSS3");<br />
+$('ul li ul li:nth-child(2)').append("aqui!");<br />
+$('ul li ul li:nth-child(2)').addClass("red");<br />
+$('ul li ul li:nth-child(2)').parent().addClass("red");<br />
+$('ul li ul li:nth-child(2)').parent().parent().addClass("red");<br />
+$('ul li ul li:nth-child(2)').parent().parent().parent().addClass("red");<br />
+$('ul li ul li:nth-child(2)').parents('ul').addClass("parents ui");<br />
+
+</body>
+</html>

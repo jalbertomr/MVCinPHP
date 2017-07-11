@@ -1,0 +1,38 @@
+<!-- jquery tutorial 7 Effects 
+   documentation in api.jquery.com/
+                    api.jquery.com/animate/
+                    api.jquery.com/category/effects/
+--!>
+<html>
+<head>
+  <script type="text/javascript" src="../public/js/jquery-1.12.0.js"></script>
+  
+  <script type="text/javascript">
+  $(document).ready( function(){
+
+    //$('h1').hide();
+    $('#button').click( function(){
+      //$('h1').fadeOut(1000);
+      //$('h1').show();
+      //$('h1').fadeIn(1000);
+      //$('h1').slideDown(1000);
+      $('h1').slideUp(1000);    
+    });    
+  });
+  </script>
+
+</head>
+<body>
+
+<h1>Header</h1>
+<ul>
+  <li>This <b>is an</b> item</li>
+  <li>This is an item</li>
+  <li>This is an item 3</li>
+  <li>This is an item</li>
+  <li>This is an item</li>  
+</ul>  
+
+<input type="submit" id="button" />  
+</body>
+</html>

@@ -1,0 +1,58 @@
+CREATE TABLE publications.user (
+id INT(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+login VARCHAR(25) NOT NULL,
+password VARCHAR(32) NOT NULL 
+) ENGINE = MYISAM;
+
+INSERT INTO publications.user (
+id,login,password) VALUES(
+NULL,'jesse','a1361cb85be840d6a2d762c68e4910e2'
+);
+
+
+CREATE TABLE publications.data (id INT(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+text VARCHAR(255) NOT NULL
+) ENGINE = MYISAM;
+
+ALTER TABLE publications.user ADD role ENUM('default','admin','owner') NOT NULL DEFAULT 'default';
+
+INSERT INTO publications.user ( id,login,password,role)
+VALUES(NULL,'joe','a1361cb85be840d6a2d762c68e4910e2','default');
+
+UPDATE user SET role='owner' WHERE id=1;
+
+RENAME TABLE users TO user;
+
+/*
+* se incrementa la seguridad de MD5 (VARCHAR(32)) a 
+  sha256 (VARCHAR(64))
+*/
+ALTER TABLE user MODIFY password VARCHAR(64) NOT NULL;
+
+CREATE TABLE person(
+personid INT (11) UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY ,
+name VARCHAR(50) NOT NULL,
+age INT(3) UNSIGNED NOT NULL ,
+gender VARCHAR(1) NOT NULL 
+) ENGINE = MYISAM;
+
+ALTER TABLE user CHANGE  id userid INT(11) NOT NULL AUTO_INCREMENT; 
+
+ALTER TABLE data CHANGE id dataid INT(11) NOT NULL AUTO_INCREMENT;
+
+CREATE TABLE note(
+noteid INT(11) UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY ,
+userid INT(11) UNSIGNED NOT NULL
+title VARCHAR(50) NOT NULL,
+content TEXT NOT NULL,
+date_added DATETIME
+) ENGINE = MYISAM;
+
+CREATE TABLE `note` (
+`nodeid` INT( 11 ) UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY ,
+`userid` INT( 11 ) UNSIGNED NOT NULL ,
+`title` VARCHAR( 50 ) NOT NULL ,
+`content` TEXT NOT NULL ,
+`date_added` DATETIME NOT NULL ,
+INDEX ( `userid` )
+) ENGINE = MYISAM ;

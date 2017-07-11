@@ -1,0 +1,39 @@
+<!-- jquery tutorial 3 functions --!>
+<html>
+<head>
+  <script type="text/javascript" src="../public/js/jquery-1.12.0.js"></script>
+  
+  <script type="text/javascript">
+  $(document).ready(function(){
+  
+    //function: Re-used
+    //$('#hello').hide();
+        
+    $('#button').click( function(){
+      //alert(1);
+      //$('#hello').hide();
+      $('#hello').toggle();
+      $('#button').val('toggle Me');
+      
+    });    
+    
+  }); 
+    
+    // 
+    // $(selecting);         
+    // $('div');
+    // $('#yes');     //# means id
+    // $('div#yes');  // also can be used
+    // $('.yes');     //. means class  
+    // $('#yes').action();
+            
+    
+  </script>
+</head>
+<body>
+
+<input type="submit" id="button" />
+<div id="hello">Type some text</div>
+
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!-- jquery tutorial 6 Traversing --!>
+<html>
+<head>
+  <script type="text/javascript" src="../public/js/jquery-1.12.0.js"></script>
+  
+  <script type="text/javascript">
+  $(document).ready( function(){
+    
+    //$('ul').each( function(){
+    //  $(this).css('background', 'red');
+    //});    
+
+    //$('ul li').each( function(e){
+    //  if ( e != 2){
+    //    $(this).css('background', 'red');
+    //  }
+    //  $(this).append(e);
+    //});    
+
+    //$('ul li').each( function(e){
+    //  $(this).css('background', 'red');
+    //  $('li').eq(2).css('background', 'green');
+    //  $(this).append(e);
+    //});
+
+    $('ul li').each( function(e){
+      $('li').eq(2).css('background', 'green');
+      $('li').has('b').css('background', 'blue');
+    });
+
+    $('li').has('b').css('background', 'blue');
+    $('li').last().css('font-weight', 'bolder');    
+    
+  });
+  </script>
+
+</head>
+<body>
+
+<h1>Header</h1>
+<ul>
+  <li>This <b>is an</b> item</li>
+  <li>This is an item</li>
+  <li>This is an item</li>
+  <li>This is an item</li>
+  <li>This is an item</li>  
+</ul>  
+  
+<h2>Header2</h2>
+<ul>
+  <li>This is an item</li>
+  <li>This is an item</li>
+  <li>This is an item</li>
+  <li>This is an item</li>
+  <li>This is an item</li>  
+</ul>  
+
+
+</body>
+</html>
